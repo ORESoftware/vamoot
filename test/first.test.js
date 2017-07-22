@@ -1,11 +1,12 @@
 
-const {Vamoot} = require('../index');
+const {VamootProxy} = require('../index');
 
-var o = new Vamoot();
+var o = new VamootProxy();
 
-o.set('foo', 5);
-o.set('foo', 6);
+o.set('foo', {a: 'c'});
 
-console.error(o.get('foo'));
-console.error(o.get('foo'));
-console.error(o.get('foo'));
+
+const x = o.get('foo');
+
+x.y = 5;
+x.y = 6;
