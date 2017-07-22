@@ -25,6 +25,9 @@ export class Vamoot {
         alreadySet[prop] = true;
         value[prop] = value;
       }
+      else{
+        console.error(new Error(`property '${prop}' has already been set.`));
+      }
     };
 
     Object.freeze(this);
