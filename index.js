@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Vamoout = (function () {
-    function Vamoout() {
+var Vamoot = (function () {
+    function Vamoot() {
         var value = {};
         var alreadySet = {};
         this.get = function (prop) {
@@ -15,6 +15,6 @@ var Vamoout = (function () {
         };
         Object.freeze(this);
     }
-    return Vamoout;
+    return Vamoot;
 }());
-exports.Vamoout = Vamoout;
+exports.Vamoot = Vamoot;

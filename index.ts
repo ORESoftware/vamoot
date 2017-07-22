@@ -6,7 +6,7 @@ export interface IVamootValue {
   [key: string]: any
 }
 
-export class Vamoout {
+export class Vamoot {
 
   get: Function;
   set: Function;
