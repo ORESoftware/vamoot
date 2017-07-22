@@ -1,12 +1,11 @@
 
-const {createMcProxy} = require('../index');
+const {Vamoot} = require('../index');
 
+var o = new Vamoot();
 
-const x = createMcProxy();
+o.set('foo', 5);
+o.set('foo', 6);
 
-console.log(x);
-
-
-x.foo = 5;
-
-console.log(x);
+console.error(o.get('foo'));
+console.error(o.get('foo'));
+console.error(o.get('foo'));

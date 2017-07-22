@@ -7,5 +7,5 @@ export interface IVamootValue {
 export declare class Vamoot {
     get: Function;
     set: Function;
-    constructor();
+    constructor(v: any);
 }
