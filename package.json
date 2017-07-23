@@ -1,6 +1,6 @@
 {
   "name": "vamoot",
-  "version": "0.0.101",
+  "version": "0.0.102",
   "description": "Vamoot creates simple immutable objects",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -36,6 +36,6 @@
     "@types/node": "^8.0.14"
   },
   "dependencies": {
-    "proxy-mcproxy": "0.0.1001"
+    "freeze-existing-props": "latest"
   }
 }
