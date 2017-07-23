@@ -4,15 +4,11 @@ export interface IAlreadySet {
 export interface IVamootValue {
     [key: string]: any;
 }
-export declare class Vamoot {
-    get: Function;
-    set: Function;
-    read: Function;
-    constructor(v: any);
-}
 export declare class VamootProxy {
     get: Function;
+    getAll: Function;
     set: Function;
     read: Function;
-    constructor(v: any);
+    clone: Function;
+    constructor(v?: any, $alreadySet?: IAlreadySet);
 }

@@ -1,0 +1,14 @@
+{
+  "linkToItself": true,
+  "searchRoots": [
+    "$HOME/WebstormProjects"
+  ],
+  "ignore": [
+    ".idea",
+    "/node_modules/",
+    "/.git/"
+  ],
+  "list": [
+    "freeze-existing-props"
+  ]
+}
