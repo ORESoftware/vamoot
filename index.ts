@@ -1,8 +1,12 @@
+'use strict';
+
 //core
-const assert = require('assert');
+import assert = require('assert');
 
 //npm
 import {freezeExistingProps, freezeAllProps} from 'freeze-existing-props';
+
+////////////////////////////////////////////////////////////////
 
 export interface IAlreadySet {
   [key: string]: boolean
@@ -12,6 +16,7 @@ export interface IVamootValue {
   [key: string]: any
 }
 
+/////////////////////////////////////////////////////////////////
 
 export class VamootProxy {
 

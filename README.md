@@ -1,5 +1,5 @@
 
-# Proxy-McProxy
+# Vamoot
 
-Create recursive Proxy objects and Proxy properties on the object, etc.
+A simple stand-in for writable-once Proxy
 

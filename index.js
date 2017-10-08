@@ -1,6 +1,5 @@
-"use strict";
+'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
-var assert = require('assert');
 var freeze_existing_props_1 = require("freeze-existing-props");
 var VamootProxy = (function () {
     function VamootProxy(v, $alreadySet) {
