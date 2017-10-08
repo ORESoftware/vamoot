@@ -1,6 +1,6 @@
 {
   "name": "vamoot",
-  "version": "0.0.102",
+  "version": "0.0.103",
   "description": "Vamoot creates simple immutable objects",
   "main": "index.js",
   "typings": "index.d.ts",
