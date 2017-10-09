@@ -11,6 +11,7 @@ test
 *.md
 *.ts
 *.log
+*.yml
 
 ### files
 .gitignore
