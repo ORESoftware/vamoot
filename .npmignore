@@ -16,7 +16,6 @@ test
 .gitignore
 .npmignore
 .editorconfig
-package-lock.json
 yarn.lock
 
 ### negation
