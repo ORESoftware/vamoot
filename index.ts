@@ -28,7 +28,7 @@ export class VamootProxy {
 
   constructor(v?: any, $alreadySet?: IAlreadySet) {
 
-    let internalValue: IVamootValue = v || {};
+    let internalValue: IVamootValue = v || new Map();
     const alreadySet: IAlreadySet = $alreadySet || {};
 
     this.get = this.read = function (prop: string) {

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var freeze_existing_props_1 = require("freeze-existing-props");
 var VamootProxy = (function () {
     function VamootProxy(v, $alreadySet) {
-        var internalValue = v || {};
+        var internalValue = v || new Map();
         var alreadySet = $alreadySet || {};
         this.get = this.read = function (prop) {
             return internalValue[prop];
