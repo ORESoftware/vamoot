@@ -11,12 +11,12 @@ test
 *.md
 *.ts
 *.log
+*.yml
 
 ### files
 .gitignore
 .npmignore
 .editorconfig
-package-lock.json
 yarn.lock
 
 ### negation
