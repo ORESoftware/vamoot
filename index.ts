@@ -19,50 +19,49 @@ export interface IVamootValue {
 /////////////////////////////////////////////////////////////////
 
 export class VamootProxy {
-
-  get: Function;
-  getAll: Function;
-  set: Function;
-  read: Function;
-  clone: Function;
-
-  constructor(v?: any, $alreadySet?: IAlreadySet) {
-
-    let internalValue: IVamootValue = v || new Map();
-    const alreadySet: IAlreadySet = $alreadySet || {};
-
-    this.get = this.read = function (prop: string) {
-      return internalValue[prop];
-    };
-
-    this.getAll = function () {
-      return internalValue;
-    };
-
-    this.set = function (prop: string, val: any) {
-      if (!alreadySet[prop]) {
-        alreadySet[prop] = true;
-        // internalValue[prop] = (val && typeof val === 'object' ) ? createMcProxy(val) : val;
-        Object.defineProperty(internalValue, prop, {
-          writable: false,
-          // value: (val && typeof val === 'object' ) ? createMcProxy(val) : val
-          value: (val && typeof val === 'object' ) ? freezeExistingProps(val) : val
-        });
-        return true;
-      }
-
-      throw new Error(`property '${prop}' has already been set.`);
-    };
-
-    this.clone = function () {
-      // return new VamootProxy(Object.assign({}, freezeAllProps(internalValue, 7)), alreadySet);
-      // return new VamootProxy(Object.create(internalValue), alreadySet);
-      return new VamootProxy(Object.create(internalValue));
-    };
-
+  
+  private __internalValue: IVamootValue;
+  private __alreadySet: IAlreadySet;
+  private __vamootProxyInstance: true;
+  
+  constructor(v?: Object) {
+    
+    this.__vamootProxyInstance = true;
+    this.__internalValue = v || {} as IVamootValue;
+    this.__alreadySet = {} as IAlreadySet;
+    
     Object.freeze(this);
   }
-
+  
+  get(prop: string) {
+    return this.__internalValue[prop];
+  }
+  
+  read(prop: string) {
+    return this.__internalValue[prop];
+  }
+  
+  getAll() {
+    return this.__internalValue;
+  }
+  
+  clone() {
+    return new VamootProxy(Object.create(this.__internalValue));
+  }
+  
+  set(prop: string, val: any) {
+    if (!this.__alreadySet[prop]) {
+      this.__alreadySet[prop] = true;
+      Object.defineProperty(this.__internalValue, prop, {
+        writable: false,
+        value: (val && typeof val === 'object' ) ? freezeExistingProps(val) : val
+      });
+      return true;
+    }
+    
+    throw new Error(`property '${prop}' has already been set.`);
+  };
+  
 }
 
 

@@ -5,10 +5,13 @@ export interface IVamootValue {
     [key: string]: any;
 }
 export declare class VamootProxy {
-    get: Function;
-    getAll: Function;
-    set: Function;
-    read: Function;
-    clone: Function;
-    constructor(v?: any, $alreadySet?: IAlreadySet);
+    private __internalValue;
+    private __alreadySet;
+    private __vamootProxyInstance;
+    constructor(v?: Object);
+    get(prop: string): any;
+    read(prop: string): any;
+    getAll(): IVamootValue;
+    clone(): VamootProxy;
+    set(prop: string, val: any): boolean;
 }
