@@ -1,6 +1,7 @@
 ### folders
 node_modules
 .idea
+dist/*
 
 ### matching
 *.log
@@ -8,3 +9,6 @@ node_modules
 ### files
 package-lock.json
 yarn.lock
+
+### negation
+!dist/README.md
