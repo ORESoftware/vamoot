@@ -4,21 +4,22 @@ node_modules
 .idea
 test
 scripts
+src
+.docker.r2g
 
 ### matching
-*.sh
 *.txt
 *.json
 *.md
-*.ts
 *.log
 *.yml
+*.tgz
+Dockerfile*
 
 ### files
 .gitignore
 .npmignore
 .editorconfig
 yarn.lock
+.npmrc
 
-### negation
-!*.d.ts

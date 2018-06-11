@@ -8,11 +8,11 @@ import {freezeExistingProps, freezeAllProps} from 'freeze-existing-props';
 
 ////////////////////////////////////////////////////////////////
 
-export interface IAlreadySet {
+export interface VamootAlreadySet {
   [key: string]: boolean
 }
 
-export interface IVamootValue {
+export interface VamootValue {
   [key: string]: any
 }
 
@@ -20,15 +20,19 @@ export interface IVamootValue {
 
 export class VamootProxy {
   
-  private __internalValue: IVamootValue;
-  private __alreadySet: IAlreadySet;
+  private __internalValue: VamootValue;
+  private __alreadySet: VamootAlreadySet;
   private __vamootProxyInstance: true;
   
   constructor(v?: Object) {
+
+    if(arguments.length > 0){
+      assert(v && typeof v === 'object', 'First argument to constructor must be a non-null object.');
+    }
     
     this.__vamootProxyInstance = true;
-    this.__internalValue = v || {} as IVamootValue;
-    this.__alreadySet = {} as IAlreadySet;
+    this.__internalValue = v || {} as VamootValue;
+    this.__alreadySet = {} as VamootAlreadySet;
     
     Object.freeze(this);
   }
@@ -64,4 +68,8 @@ export class VamootProxy {
   
 }
 
+
+export const r2gSmokeTest = function () {
+  return true;
+};
 
