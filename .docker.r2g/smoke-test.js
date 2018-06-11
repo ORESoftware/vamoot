@@ -30,5 +30,9 @@ const fs = require('fs');
 const EE = require('events');
 
 
+const {VamootProxy} = require('vamoot');
+const v = new VamootProxy();
+
+
 
 // your test goes here
